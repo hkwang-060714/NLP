@@ -280,8 +280,8 @@ def main():
     processor.build_vocab(data['Phrase'])
     X = data['Phrase'].values
     y = data['Sentiment'].values
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=Config.sed)
-    X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.25, stratify=y_train, random_state=Config.sed)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=Config.seed)
+    X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.25, stratify=y_train, random_state=Config.seed)
     train_dataset = MovieDataset(X_train, y_train, processor)
     val_dataset = MovieDataset(X_val, y_val, processor)
     test_dataset = MovieDataset(X_test, y_test, processor)
